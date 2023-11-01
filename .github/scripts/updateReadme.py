@@ -41,11 +41,12 @@ if __name__ == "__main__":
             readme_file.write(f"* {total_points} Punkte\n* {timeframe}\n")
             write_horizontal_line(readme_file)
         
+        readme_file.write(f"<ol>\n")
         for test in data.get("tests"):
             have_specs = test.get("specs")
             points = test.get("points")
             title = have_specs.get("title")
-            readme_file.write(f"<ol><li> {title} ({points} Punkte</li>)\n")
+            readme_file.write(f"<li> {title} ({points} Punkte)</li>\n")
             
                 
             if "list" in have_specs:
@@ -59,7 +60,9 @@ if __name__ == "__main__":
                 readme_file.write(f"Hilfe: \n")
                 for spickzettel in test["urls"]:
                     readme_file.write(f"<ul><li>[Spickzettel]({spickzettel})</li></ul> \n")
-                write_horizontal_line(readme_file)
+            write_horizontal_line(readme_file)
+        readme_file.write(f"</ol>\n")
+                
                 
     readme_file.close()
     autograding_file.close()
