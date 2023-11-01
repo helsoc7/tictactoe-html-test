@@ -1,29 +1,4 @@
 {
-  "additionalData": {
-    "customSpecs": {
-      "title": "Eine benutzerdefinierte Anforderung",
-      "list": [
-        "Eine Anforderung für die benutzerdefinierte Aufgabe",
-        "Eine weitere Anforderung"
-      ]
-    },
-    "customTest": {
-      "specs": {
-        "title": "Benutzerdefinierte Testanforderung",
-        "list": [
-          "Eine Anforderung für den benutzerdefinierten Test",
-          "Noch eine Anforderung"
-        ],
-        "code-example": "Benutzerdefinierter Test-Code"
-      },
-      "name": "Benutzerdefinierter Test",
-      "feedback": "Rückmeldung für den benutzerdefinierten Test",
-      "urls": ["Link zur benutzerdefinierten Ressource"],
-      "file": "custom_test.html",
-      "javascript": "Benutzerdefinierter JavaScript-Test",
-      "output": "true",
-      "comparison": "exact",
-      "points": 10
-    }
-  }
+  "newKey1": "Neuer Wert 1",
+  "newKey2": "Neuer Wert 2"
 }
