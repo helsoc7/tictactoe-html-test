@@ -45,20 +45,20 @@ if __name__ == "__main__":
             have_specs = test.get("specs")
             points = test.get("points")
             title = have_specs.get("title")
-            readme_file.write(f"[] {title} ({points} Punkte)\n")
+            readme_file.write(f"<ol><li> {title} ({points} Punkte</li>)\n")
             
                 
             if "list" in have_specs:
                 for l in have_specs["list"]:
-                    readme_file.write(f"* {l}\n")
+                    readme_file.write(f"<ul><li> {l}</li></ul>\n") 
                     
             if "code_example" in have_specs:
-                readme_file.write(f" {have_specs.get('code_example')}\n")
+                readme_file.write(f"<ul><li>{have_specs.get('code_example')}</li></ul>\n")
             
             if "urls" in test:
                 readme_file.write(f"Hilfe: \n")
                 for spickzettel in test["urls"]:
-                    readme_file.write(f"* [Spickzettel]({spickzettel}) \n")
+                    readme_file.write(f"<ul><li>[Spickzettel]({spickzettel})</li></ul> \n")
                 write_horizontal_line(readme_file)
                 
     readme_file.close()
