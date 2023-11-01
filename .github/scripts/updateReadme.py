@@ -59,7 +59,9 @@ if __name__ == "__main__":
             if "urls" in test:
                 readme_file.write(f"Hilfe: \n")
                 for spickzettel in test["urls"]:
-                    readme_file.write(f"<ul><li>[Spickzettel]({spickzettel})</li></ul> \n")
+                    #readme_file.write(f"<ul><li>[Spickzettel]({spickzettel})</li></ul> \n")
+                    readme_file.write(f"<ul><li><a href=\"{spickzettel}\">Spickzettel</a></li></ul> \n")
+
             write_horizontal_line(readme_file)
         readme_file.write(f"</ol>\n")
                 
