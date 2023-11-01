@@ -8,27 +8,6 @@ def write_intro(file, title, content):
     if content is not None:
         file.write(f"# {title}\n")
         file.write(f"{content}\n")
-
-
-def write_section(file, title, content):
-    if content is not None:
-        file.write(f"#### {title}\n")
-        file.write(f"{content}\n")
-
-
-def write_smallsection(file, title, content):
-    file.write(f"##### {title}\n")
-    file.write(f"* {content}\n")
-
-
-def write_smallersection(file, title, content):
-    file.write(f"###### {title}\n")
-    file.write(f"* {content}\n")
-
-
-def write_cheatsheet_section(file, title, content):
-    file.write(f"###### {title}\n")
-    file.write(f"{content}\n")
     
 def write_horizontal_line(file):
     file.write(f"\n---\n")
@@ -66,27 +45,20 @@ if __name__ == "__main__":
             have_specs = test.get("specs")
             points = test.get("points")
             title = have_specs.get("title")
-            readme_file.write(f"### {title} ({points} Punkte)\n")
+            readme_file.write(f"[] {title} ({points} Punkte)\n")
             
-            if have_specs is not None:
-                name = test.get("name")
-                #write_section(readme_file, name, "")
                 
                 if "list" in have_specs:
-                    content = ""
                     for l in have_specs["list"]:
-                        content += (l + "\n")
-                        #write_smallsection(readme_file, "Unteraufgaben", l)
                         readme_file.write(f"* {l}\n")
                         
                 if "code_example" in have_specs:
-                    write_smallersection(readme_file, "Code-Beispiel:", f"`{have_specs.get('code_example')}`")
+                    readme_file.write(f" {have_specs.get('code_example')}\n")
                 
                 if "urls" in test:
-                    content = ""
-                    for l in test["urls"]:
-                        content += (f"* [Spickzettel]({l}) \n")
-                    write_cheatsheet_section(readme_file, "Hilfe", content)
+                    readme_file.write(f"Hilfe: \n")
+                    for spickzettel in have_specs.get("urls"):
+                        readme_file.write(f"* [Spickzettel]({spickzettel}) \n")
                     write_horizontal_line(readme_file)
                 
     readme_file.close()
