@@ -1,15 +1,29 @@
 {
+  "additionalData": {
+    "customSpecs": {
+      "title": "Eine benutzerdefinierte Anforderung",
+      "list": [
+        "Eine Anforderung für die benutzerdefinierte Aufgabe",
+        "Eine weitere Anforderung"
+      ]
+    },
+    "customTest": {
       "specs": {
-        "title": "Füge außerhalb der Tabelle eine Schaltfläche 'Play' mit der ID 'play' hinzu"
+        "title": "Benutzerdefinierte Testanforderung",
+        "list": [
+          "Eine Anforderung für den benutzerdefinierten Test",
+          "Noch eine Anforderung"
+        ],
+        "code-example": "Benutzerdefinierter Test-Code"
       },
-      "name": "Include a 'Play' button with ID 'play' outside the table",
-      "feedback": "There should be a button outside the table with the text 'Play' and an ID of 'play'.",
-      "urls": [
-        "https://www.w3schools.com/tags/tag_button.asp"
-      ],
-      "file": "grid.html",
-      "javascript": "(function() { var playButton = document.querySelector('button#play'); return playButton && playButton.textContent.trim() === 'Play' ? 'true' : 'false'; })()",
+      "name": "Benutzerdefinierter Test",
+      "feedback": "Rückmeldung für den benutzerdefinierten Test",
+      "urls": ["Link zur benutzerdefinierten Ressource"],
+      "file": "custom_test.html",
+      "javascript": "Benutzerdefinierter JavaScript-Test",
       "output": "true",
       "comparison": "exact",
       "points": 10
     }
+  }
+}
