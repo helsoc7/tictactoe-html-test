@@ -1,0 +1,15 @@
+{
+      "specs": {
+        "title": "Füge außerhalb der Tabelle eine Schaltfläche 'Play' mit der ID 'play' hinzu"
+      },
+      "name": "Include a 'Play' button with ID 'play' outside the table",
+      "feedback": "There should be a button outside the table with the text 'Play' and an ID of 'play'.",
+      "urls": [
+        "https://www.w3schools.com/tags/tag_button.asp"
+      ],
+      "file": "grid.html",
+      "javascript": "(function() { var playButton = document.querySelector('button#play'); return playButton && playButton.textContent.trim() === 'Play' ? 'true' : 'false'; })()",
+      "output": "true",
+      "comparison": "exact",
+      "points": 10
+    }
