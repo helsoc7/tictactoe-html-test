@@ -48,18 +48,18 @@ if __name__ == "__main__":
             readme_file.write(f"[] {title} ({points} Punkte)\n")
             
                 
-                if "list" in have_specs:
-                    for l in have_specs["list"]:
-                        readme_file.write(f"* {l}\n")
-                        
-                if "code_example" in have_specs:
-                    readme_file.write(f" {have_specs.get('code_example')}\n")
-                
-                if "urls" in test:
-                    readme_file.write(f"Hilfe: \n")
-                    for spickzettel in have_specs.get("urls"):
-                        readme_file.write(f"* [Spickzettel]({spickzettel}) \n")
-                    write_horizontal_line(readme_file)
+            if "list" in have_specs:
+                for l in have_specs["list"]:
+                    readme_file.write(f"* {l}\n")
+                    
+            if "code_example" in have_specs:
+                readme_file.write(f" {have_specs.get('code_example')}\n")
+            
+            if "urls" in test:
+                readme_file.write(f"Hilfe: \n")
+                for spickzettel in have_specs.get("urls"):
+                    readme_file.write(f"* [Spickzettel]({spickzettel}) \n")
+                write_horizontal_line(readme_file)
                 
     readme_file.close()
     autograding_file.close()
