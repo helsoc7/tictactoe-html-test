@@ -53,10 +53,8 @@ if __name__ == "__main__":
                 for l in have_specs["list"]:
                     readme_file.write(f"<ul><li> {l}</li></ul>\n") 
                     
-            if "code_example" in have_specs:
-                write_horizontal_line(readme_file)
-                readme_file.write(f"<ul><li>{have_specs.get('code_example')}</li></ul>\n")
-                write_horizontal_line(readme_file)
+            if "code-example" in have_specs:
+                readme_file.write(f"<ul><li><code>{have_specs.get('code-example')}</code></li></ul>\n")
             
             if "urls" in test:
                 readme_file.write(f"Hilfe: \n")
