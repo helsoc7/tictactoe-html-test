@@ -42,13 +42,13 @@ jobs:
 
       - name: Merge JSON Data
         run: |
-          jq -s '.[0] + .[1]' autograding.json additional_data.json > merged_data.json
-          mv merged_data.json autograding.json
+          jq -s '.[0] + .[1]' .github/classroom/autograding.json additional_data.json > merged_data.json
+          mv merged_data.json .github/classroom/autograding.json
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add autograding.json
+          git add .github/classroom/autograding.json
           git commit -m "Extended autograding.json"
           git push
