@@ -1,0 +1,54 @@
+name: Update Autograding JSON
+
+on:
+  workflow_run:
+    workflows: ["GitHub Classroom Workflow"]
+    types:
+      - completed
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Workflow Result
+        id: get_workflow_result
+        run: |
+          echo "::set-output name=workflow_result::${{ toJson(github.event.workflow_run) }}"
+
+      - name: Wait for the Triggered Workflow to Complete
+        run: |
+          workflow_id=${{ github.event.workflow_run.id }}
+          repo_owner=${{ github.event.repository.owner.login }}
+          repo_name=${{ github.event.repository.name }}
+          status=""
+          while [ "$status" != "completed" ]; do
+            status=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${repo_owner}/${repo_name}/actions/runs/$workflow_id" \
+              | jq -r '.status')
+            echo "Workflow status: $status"
+            if [ "$status" != "completed" ]; then
+              sleep 60
+            fi
+          done
+          echo "Triggered workflow has completed."
+
+      - name: Get Additional JSON Data
+        run: |
+          curl -o additional_data.json https://raw.githubusercontent.com/${{ github.repository }}/.github/classroom/moreautograding.json
+
+      - name: Merge JSON Data
+        run: |
+          jq -s '.[0] + .[1]' autograding.json additional_data.json > merged_data.json
+          mv merged_data.json autograding.json
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add autograding.json
+          git commit -m "Extended autograding.json"
+          git push
