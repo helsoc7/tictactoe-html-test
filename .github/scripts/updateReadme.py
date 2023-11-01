@@ -54,7 +54,9 @@ if __name__ == "__main__":
                     readme_file.write(f"<ul><li> {l}</li></ul>\n") 
                     
             if "code_example" in have_specs:
+                write_horizontal_line(readme_file)
                 readme_file.write(f"<ul><li>{have_specs.get('code_example')}</li></ul>\n")
+                write_horizontal_line(readme_file)
             
             if "urls" in test:
                 readme_file.write(f"Hilfe: \n")
