@@ -57,7 +57,7 @@ if __name__ == "__main__":
             
             if "urls" in test:
                 readme_file.write(f"Hilfe: \n")
-                for spickzettel in have_specs.get("urls"):
+                for spickzettel in test["urls"]:
                     readme_file.write(f"* [Spickzettel]({spickzettel}) \n")
                 write_horizontal_line(readme_file)
                 
