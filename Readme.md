@@ -13,6 +13,7 @@ Eure Aufgabe ist es, eine HTML-Datei namens grid.html zu erstellen mit einer 3x3
 <li> HTML Datei namens grid.html mit HTML Tabelle erstellen  (5 Punkte)</li>
 <ul><li> Erstelle eine HTML-Datei mit dem Namen 'grid.html'</li></ul>
 <ul><li> In dieser Datei soll eine Tabelle erstellt werden</li></ul>
+Code-Beispiel: 
 <ul><li><code>&lt;table&gt;&lt;/table&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/tags/tag_table.asp">Spickzettel</a></li></ul> 
@@ -24,6 +25,7 @@ Hilfe:
 
 ---
 <li> Tabelle mit der Tabellenüberschrift 'TicTacToe' erstellen (10 Punkte)</li>
+Code-Beispiel: 
 <ul><li><code>&lt;caption&gt;&lt;/caption&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/tags/tag_caption.asp#:~:text=The%20tag%20defines%20a,align%20and%20place%20the%20caption.">Spickzettel</a></li></ul> 
@@ -35,24 +37,28 @@ Hilfe:
 
 ---
 <li> HTML Tabelle um 9 Tabellenfelder erweitern (10 Punkte)</li>
+Code-Beispiel: 
 <ul><li><code>&lt;td&gt;&lt;/td&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/tags/tag_td.asp#:~:text=The%20tag%20defines%20a,with%20the%20element)">Spickzettel</a></li></ul> 
 
 ---
 <li> Jeweils pro Tabellenfeld einen <button> hinzufügen (15 Punkte)</li>
+Code-Beispiel: 
 <ul><li><code>&lt;button&gt;&lt;/button&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/tags/tag_button.asp">Spickzettel</a></li></ul> 
 
 ---
 <li> Jeder Button sollte X anzeigen (20 Punkte)</li>
+Code-Beispiel: 
 <ul><li><code>&lt;button type='button'&gt;Click Me!&lt;/button&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/tags/tag_button.asp">Spickzettel</a></li></ul> 
 
 ---
 <li> Benennen der IDs jedes Buttons von cell1 bis cell9 (20 Punkte)</li>
+Code-Beispiel: 
 <ul><li><code>&lt;button type='button' id='cell1'&gt;X&lt;/button&gt;</code></li></ul>
 Hilfe: 
 <ul><li><a href="https://www.w3schools.com/html/html_id.asp">Spickzettel</a></li></ul> 
